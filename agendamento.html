@@ -3,68 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento - Direito Ágil</title>
+    <title>Agendamento de Consulta</title>
     <link rel="stylesheet" href="css/agendamento.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="js/agendamento.js" defer></script>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Direito Ágil</h1>
-            <p>Agendamento de Consultas</p>
-        </header>
-        <main>
-            <form action="/agendar" method="POST" class="agendamento-form">
-                <h2>Preencha os dados para agendar</h2>
+    <header>
+        <h1>Agendar Consulta</h1>
+    </header>
+    <main>
+        <section class="form-container">
+            <h2>Preencha os dados para agendar sua consulta</h2>
+            <form id="agendamento-form">
+                <label for="advogado">Escolha o Advogado:</label>
+                <select id="advogado" name="advogado" required>
+                    <option value="">Selecione</option>
+                    <option value="1">João Silva - Direito Trabalhista</option>
+                    <option value="2">Maria Santos - Direito Civil</option>
+                    <option value="3">Carlos Souza - Direito Penal</option>
+                </select>
 
-                <label class="label-input">
-                    <i class="far fa-user icon-modify"></i>
-                    <input type="text" placeholder="Nome Completo" required>
-                </label>
+                <label for="data">Data do Agendamento:</label>
+                <input type="date" id="data" name="data" min="" required>
 
-                <label class="label-input">
-                    <i class="fas fa-id-card icon-modify"></i>
-                    <input type="text" placeholder="CPF" required>
-                </label>
+                <label for="horario">Horário:</label>
+                <select id="horario" name="horario" required>
+                    <option value="">Selecione</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                </select>
 
-                <label class="label-input">
-                    <i class="fas fa-phone icon-modify"></i>
-                    <input type="text" placeholder="Telefone" required>
-                </label>
+                <label for="descricao">Descrição do Assunto:</label>
+                <textarea id="descricao" name="descricao" maxlength="400" placeholder="Breve descrição do que será tratado..." required></textarea>
 
-                <label class="label-input">
-                    <i class="far fa-envelope icon-modify"></i>
-                    <input type="email" placeholder="Email" required>
-                </label>
-
-                <label class="label-input">
-                    <i class="fas fa-calendar icon-modify"></i>
-                    <input type="date" placeholder="Data do Agendamento" required>
-                </label>
-
-                <label class="label-input">
-                    <i class="fas fa-clock icon-modify"></i>
-                    <input type="time" placeholder="Horário do Agendamento" required>
-                </label>
-
-                <label class="label-input">
-                    <i class="fas fa-briefcase icon-modify"></i>
-                    <select required>
-                        <option value="" disabled selected>Selecione a área de consulta</option>
-                        <option value="trabalhista">Direito Trabalhista</option>
-                        <option value="contratual">Direito Contratual</option>
-                        <option value="consumidor">Direito do Consumidor</option>
-                    </select>
-                </label>
-
-                <label class="label-input">
-                    <i class="fas fa-pencil-alt icon-modify"></i>
-                    <textarea placeholder="Descrição do caso (opcional)" maxlength="250"></textarea>
-                </label>
-
-                <button type="submit" class="btn btn-primary">Agendar</button>
+                <button type="submit">Agendar</button>
             </form>
-        </main>
-    </div>
+        </section>
+    </main>
 </body>
-</html>
